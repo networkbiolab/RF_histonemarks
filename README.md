@@ -1,4 +1,4 @@
-# Paper_thesis
+# Random Forest for the identification of relationships between epigenetic marks and its application to robust assignment of chromatin states
 This approach is implemented in Python 3.7. Please follow specific instructions for your platform to install the Python 3 interpreter [here](https://www.python.org/downloads/).
 ## Requirements
 - scikit-learn == 0.24.2

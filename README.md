@@ -35,8 +35,13 @@ H3K4ME3
 H3K27AC_label
 ```
 # Train and Test Random Forest algorithms
-The next step is use the created dataset to train and test the Random Forest algorithms. For this, we use the script RF_regression_load.py. This script has two options of usage, the first (0) use the entire dataset to train the algorithms, and the second (1) loads a model and trains it with the given dataset. The input arguments of the script using the first option (0) is the dataset file, number of trees, depth (0 to max depth) and number, cores and the name of the histone mark to predict.
+The next step is use the created dataset to train and test the Random Forest algorithms. For this, we use the script RF_regression_load.py. This script has two options of usage, the first (0) use the entire dataset to train the algorithms, and the second (1) loads a model and test it with the given dataset. The output of this script are the trained model in format .pkl and and the importance values of the attributes used. The input arguments of the script using the first option (0) are the dataset file, number of trees, depth (0 to max depth) and number, cores and the name of the histone mark to predict.
 ```
 python3 RF_regression_load.py 0 dataset.tsv n_trees(int) depth(int) n_cores(int) histone_mark_name
+```
+The input arguments of the second option (1) are the model to test in .pkl format, the dataset to test, and the predicted histone mark.
+```
+python3 RF_regression_load.py 1 model.pkl test_dataset.tsv histone_mark_name
+```
 
 

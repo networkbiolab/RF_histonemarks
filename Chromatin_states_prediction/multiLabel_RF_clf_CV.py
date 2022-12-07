@@ -2,14 +2,10 @@ import sys
 import pandas as pd
 import numpy as np
 from numpy import array, hstack, math
-from numpy.random import uniform
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import confusion_matrix
-from matplotlib import rc
 from scipy.stats import spearmanr, pearsonr
 import joblib
 

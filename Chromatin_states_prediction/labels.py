@@ -5,10 +5,8 @@ with open(sys.argv[1],'r') as file:
 	data = file.readlines()
 
 chr1 = np.zeros(int(sys.argv[2]),dtype=int)
-#chr1 = np.zeros(248956422,dtype=int)
-chr2 = np.zeros(242193529,dtype=int)
-#chr1 = np.zeros(12000,dtype=int)
-#print(chr1)
+
+#chr2 = np.zeros(242193529,dtype=int)
 
 for line in data:
 	line = line[:-1]

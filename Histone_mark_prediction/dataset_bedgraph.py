@@ -26,15 +26,12 @@ for i in args.inputFile:
 		sp_line = line.split("\t")
 		chr = sp_line[0]
 		n_frag = (int(sp_line[2])-int(sp_line[1]))/args.window
-		# ~ print(line)
-		# ~ print(n_frag)
+		
 		for j in range(0,int(n_frag)):
 			# ~ print(sp_line[3])
 			array.append(sp_line[3])
 	df[name] = array
 
-	# ~ print()
 
-# ~ print(df)
 df.to_csv("dataset_chr"+chr+"_f"+str(args.window)+"_"+label+".txt", index = False, sep = "\t")
 

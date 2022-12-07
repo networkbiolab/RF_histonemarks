@@ -3,11 +3,11 @@ import pandas as pd
 import re
 
 #INPUT
-#ARGV[1] txt con el dataset
-#ARGV[2] txt con las columnas a extraer
-#ARGV[3] archivo output
-#ARGV[4] d
-#ARGV[5] frag
+#ARGV[1]  dataset file
+#ARGV[2]  columns to extract
+#ARGV[3]  output name
+#ARGV[4]  distance
+#ARGV[5]  fragment size
 
 d = sys.argv[4]
 frag = sys.argv[5]

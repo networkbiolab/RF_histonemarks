@@ -12,7 +12,6 @@ data_1 = pd.concat([data_1,data_4])
 
 data_1.index = range(data_1.shape[0])
 
-#print(data_1)
 
 name = sys.argv[1][:-4]+"_"+sys.argv[2][8:-4]+"_"+sys.argv[3][8:-4]+"_"+sys.argv[4][8:-1]+"t"
 print(name)

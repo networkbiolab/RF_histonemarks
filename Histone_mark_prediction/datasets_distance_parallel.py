@@ -3,17 +3,15 @@ import pandas as pd
 import multiprocessing as mp
 import os
 
-#d: distancia rio arriba y rio abajo (nt)
+#d: distance upstream and downstream (nt)
 d = sys.argv[2]
-#frag: tamano de los fragmentos de los datasets
+#frag: fragment size
 frag = sys.argv[3]
-#w: numero de fragmentos rio arriba y rio abajo
 w = int(d)/int(frag)
 w = int(w)
-#n_proc: numero de procesadores
+#n_proc: number of processors
 n_proc = sys.argv[4]
 
-#se crea el primer archivo el cual contedra el header del archivo final
 f = pd.read_csv(sys.argv[1],sep="\t")
 with open("header.txt",'w') as out:
     for i in range(0,w+1):
@@ -26,13 +24,11 @@ with open("header.txt",'w') as out:
 
 
 
-#Funcion que crea el dataset
 def dataset(tuple):
 	a = int(tuple[0])
 	b = int(tuple[1])
 	c = int(tuple[2])
 	proc = tuple[3]
-	#print("tupla",tuple)
 	if b == 0:
 		x = b+a
 	if b-a >= 0 and b+a < len(f):
@@ -53,7 +49,7 @@ def test(tuple):
 	d = tuple[3]
 	print("a ",a,"b ",b,"c ",c,"d ",d)
 
-#creacion tuplas
+
 i = 0
 p = 1
 tup = []
@@ -76,17 +72,11 @@ aux1 = tuple((40,0,56,1))
 aux2 = tuple((40,56,112,2))
 aux3 = zip(aux1,aux2)
 
-#print(tup)
-#print(len(f))
+
 with mp.Pool(processes=int(sys.argv[4])) as pool:
-   	#results = pool.map(cube, range(1,int(sys.argv[4])+1))
-	#results = pool.map(dataset,aux3)
-	#results = pool.map(test,[(40,0,56,1),(40,56,112,2)])
-	#results = pool.map(dataset,tup)
+   	
 	pool.map(dataset,tup)
-	#pool.map(dataset,[(40,0,56.0,1),(40,56.0,112.0,2),(40,112.0,168,3)])
-#	pool.map(dataset,[(40,0,56.0,1),(40,56.0,112.0,2)])
-#print(results)
+	
 
 n_out = ""
 

@@ -1,21 +1,10 @@
 import sys
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-# Using Skicit-learn to split data into training and testing sets
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix
-#from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import KFold
-from sklearn.model_selection import cross_val_score
-from sklearn.metrics import recall_score
 from sklearn.metrics import r2_score
 from scipy.stats import spearmanr, pearsonr
 
-#from sklearn.metrics import plot_roc_curve
-from sklearn.metrics import roc_curve, roc_auc_score
-#from sklearn.externals import joblib
 import joblib
 
 if sys.argv[1] == "0":
